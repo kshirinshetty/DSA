@@ -1,0 +1,82 @@
+# MEMORY MANAGEMENT
+
+## Understanding Memory Management:
+
+On a very surface level, with respect to data structures, memory management is controlling and organizing the memory. It works on how you allocate memory, how the memory is used and freed.
+Under this comes the wide-known distinction: understanding when and how memory is assigned to variables and data structures- via static and dynamic memory allocation
+
+---
+
+## Static Memory Allocation:
+
+Understand that static means unchanging- in other words fixed
+So static memory allocation involves a fixed size and type of memory
+
+This introduces us on a better ground to static memory allocation which involves:
+
+* Memory being allocated by the compiler
+* Exact size and type of the memory must be known at compile time
+* Memory allocated- cannot be altered during run time
+* Memory is allocated in the stack area
+
+**Useful:**
+When the data size is fixed and known before processing
+
+**Not useful:**
+
+* Memory under utilization or over utilization
+* Memory cannnot be deleted only contents can be rewritten
+
+**Use cases:** ( Simple terms: when you need speed and predictability)
+
+* Critical performance requirements: Competitive programming, real-time data processing
+* Embedded systems: systems with limited memory
+* Deterministic behaviour
+
+Eg: int a,
+
+---
+
+## Dynamic Memory Allocation
+
+Dynamic means changing
+Indicating that the sizeof memory being allocated can change
+Memory is allocated during runtime which is the program execution time
+Memory can be obtained and released during program execution
+
+**Advantages**
+
+**Disadvantages**
+
+**Necessity:**
+
+* Input size is unknown or needs to grow and shrink
+* Complex data structures
+* Optimized memory usage- when we dont want to under or over utilize
+* Memory persistence outside the function scope as static memory disappears after the function ends
+
+---
+
+## Application in Python:
+
+You dont explicitly manage memory
+
+Python has three important workings:
+
+* Dynamic memory allocation by default
+* Garbage collection
+* Heap based object storage
+
+Every variable created is allocated dynamically and managed by python internally
+Memory gets allocated to the heap -> Python track reference -> Remove it when not used ( all of this is taken care by python without interference of the user)
+
+Static allocation : Behaviour runs similar to fixed-size data structures: tuples
+
+---
+
+## Application in C:
+
+Dynamic memory allocation:
+
+* Malloc, calloc, realloc
+* free
